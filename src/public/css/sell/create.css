@@ -1,0 +1,79 @@
+.sell-form__content {
+    max-width: 760px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+.sell-form__heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sell-form__heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.form__group {
+    margin-bottom: 40px;
+}
+
+.form__section-title {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.image-form {
+    position: relative;
+
+    height: 180px;
+
+    border: 1px dashed #C5C5C5;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.image-preview {
+    width: 100%;
+    height: 100%;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.image-upload-button {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border: 2px solid #82756A;
+    border-radius: 5px;
+
+    color: #82756A;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+#image {
+    display: none;
+}
+
+.form__error {
+    margin-top: 10px;
+
+    color: #FF5555;
+    font-size: 14px;
+}

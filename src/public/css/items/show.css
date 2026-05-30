@@ -1,0 +1,184 @@
+.item-detail {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 40px;
+
+    display: flex;
+    gap: 60px;
+}
+
+.item-detail__image {
+    width: 50%;
+}
+
+.item-detail__image img {
+    width: 100%;
+    display: block;
+}
+
+.item-detail__content {
+    width: 50%;
+}
+
+.item-detail__name {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.item-detail__brand {
+    margin: 10px 0 20px;
+    font-size: 16px;
+}
+
+.item-detail__price {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.item-detail__price span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.item-detail__actions {
+    display: flex;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.item-detail__action-icon {
+    text-align: center;
+}
+
+.item-detail__action-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.item-detail__like-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.item-detail__button {
+    margin: 20px 0 40px;
+}
+
+.item-detail__button-submit,
+.item-detail__comment-button {
+    display: block;
+    width: 100%;
+
+    height: 50px;
+    line-height: 50px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #82756A;
+    color: #fff;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.item-detail__sold {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+
+    background: #82756A;
+    color: #fff;
+
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.item-detail__description,
+.item-detail__info,
+.item-detail__comments,
+.item-detail__form {
+    margin-top: 40px;
+}
+
+.item-detail__description h3,
+.item-detail__info h3,
+.item-detail__comments h3,
+.item-detail__form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.item-detail__category,
+.item-detail__condition {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.item-detail__category span {
+    padding: 4px 12px;
+
+    background: #f3f3f3;
+    border-radius: 20px;
+
+    font-size: 14px;
+}
+
+.item-detail__comment {
+    margin-bottom: 20px;
+}
+
+.item-detail__comment-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 10px;
+}
+
+.item-detail__user-image,
+.item-detail__user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.item-detail__user-image {
+    object-fit: cover;
+}
+
+.item-detail__user-icon {
+    background: #d9d9d9;
+}
+
+.item-detail__comment-content {
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.item-detail__textarea {
+    width: 100%;
+    min-height: 180px;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    resize: vertical;
+}
+
+.item-detail__error {
+    margin: 10px 0;
+    color: #ff5555;
+}

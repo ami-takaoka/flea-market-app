@@ -1,18 +1,79 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\SellController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [ItemController::class, 'index'])
+    ->name('items.index');
+
+Route::get('/item/{item}', [ItemController::class, 'show'])
+    ->name('items.show');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+
+    // コメント
+    Route::post('/comment/{item}', [CommentController::class, 'store'])
+        ->name('comments.store');
+
+    // いいね
+    Route::post('/like/{item}', [LikeController::class, 'store'])
+        ->name('likes.store');
+
+    Route::delete('/like/{item}', [LikeController::class, 'destroy'])
+        ->name('likes.destroy');
+
+    // プロフィール編集
+    Route::get('/mypage/profile', [ProfileController::class, 'edit'])
+        ->name('profile.edit');
+
+    Route::post('/mypage/profile', [ProfileController::class, 'update'])
+        ->name('profile.update');
+
+    // マイページ
+    Route::get('/mypage', [MyPageController::class, 'index'])
+        ->name('mypage');
+
+    // 出品
+    Route::get('/sell', [SellController::class, 'create'])
+        ->name('sell.create');
+
+    Route::post('/sell', [SellController::class, 'store'])
+        ->name('sell.store');
+
+    // 購入画面
+    Route::get('/purchase/{item}', [PurchaseController::class, 'create'])
+        ->name('purchase.create');
+
+    // 住所変更画面
+    Route::get('/purchase/address/{item}', [PurchaseController::class, 'editAddress'])
+        ->name('purchase.address.edit');
+
+    // 住所変更保存
+    Route::post('/purchase/address/{item}', [PurchaseController::class, 'updateAddress'])
+        ->name('purchase.address.update');
+
+    // 購入処理
+    Route::post('/purchase/{item}', [PurchaseController::class, 'purchase'])
+        ->name('purchase.store');
 });
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', VerifyEmailController::class)
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');

@@ -1,0 +1,188 @@
+@extends('layouts.app')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/purchase/create.css') }}">
+@endsection
+
+@section('content')
+
+<div class="purchase-content">
+
+    <form
+        class="purchase-form"
+        action="{{ route('purchase.store', $item->id) }}"
+        method="post"
+    >
+
+        @csrf
+
+        <div class="purchase-content__left">
+
+            {{-- 商品情報 --}}
+            <div class="purchase-item">
+
+                <img
+                    class="purchase-item__image"
+                    src="{{ $item->image }}"
+                    alt="商品画像"
+                >
+
+                <div class="purchase-item__detail">
+
+                    <h2 class="purchase-item__name">
+                        {{ $item->name }}
+                    </h2>
+
+                    <p class="purchase-item__price">
+                        ¥{{ number_format($item->price) }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            {{-- 支払い方法 --}}
+            <div class="purchase-form__group">
+
+                <h3 class="purchase-form__title">
+                    支払い方法
+                </h3>
+
+                <select class="purchase-form__select" name="payment_method" id="payment_method">
+                    <option value="">
+                        選択してください
+                    </option>
+
+                    <option value="konbini">
+                        コンビニ払い
+                    </option>
+
+                    <option value="card">
+                        カード支払い
+                    </option>
+
+                </select>
+
+                <div class="form__error">
+                    @error('payment_method')
+                        {{ $message }}
+                    @enderror
+                </div>
+
+            </div>
+
+            {{-- 配送先 --}}
+            <div class="purchase-form__group">
+
+                <div class="purchase-form__heading">
+
+                    <h3 class="purchase-form__title">
+                        配送先
+                    </h3>
+
+                    <a
+                        class="purchase-form__link"
+                        href="{{ route('purchase.address.edit', $item->id) }}"
+                    >
+                        変更する
+                    </a>
+
+                </div>
+
+                <div class="purchase-address">
+
+                    <p>
+                        〒{{ $address['postal_code'] ?? $user->postal_code ?? '' }}
+                    </p>
+
+                    <p>
+                        {{ $address['address'] ?? $user->address ?? '' }}
+                    </p>
+
+                    <p>
+                        {{ $address['building'] ?? $user->building ?? '' }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="purchase-content__right">
+
+            <div class="purchase-summary">
+
+                <div class="purchase-summary__row">
+
+                    <span>
+                        商品代金
+                    </span>
+
+                    <span>
+                        ¥{{ number_format($item->price) }}
+                    </span>
+
+                </div>
+
+                <div class="purchase-summary__row">
+
+                    <span>
+                        支払い方法
+                    </span>
+
+                    <span id="payment_method_display">
+                        選択してください
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="purchase-form__button">
+
+                <button
+                    class="purchase-form__button-submit"
+                    type="submit"
+                >
+                    購入する
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+@endsection
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const select = document.getElementById('payment_method');
+    const display = document.getElementById('payment_method_display');
+
+    function updatePaymentMethod() {
+    const value = select.value;
+
+    if (value == 'konbini') {
+        display.textContent = 'コンビニ払い';
+
+    } else if (value == 'card') {
+        display.textContent = 'カード支払い';
+
+    } else {
+        display.textContent = '選択してください';
+    }
+}
+
+    select.addEventListener('change', updatePaymentMethod);
+
+    updatePaymentMethod();
+
+});
+</script>
+@endpush

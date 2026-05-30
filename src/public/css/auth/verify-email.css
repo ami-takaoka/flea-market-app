@@ -1,0 +1,46 @@
+.verify-email__content {
+    max-width: 700px;
+    margin: 120px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.verify-email__message {
+    margin-bottom: 60px;
+}
+
+.verify-email__message p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+.verify-email__button {
+    margin-bottom: 40px;
+}
+
+.verify-email__button-submit {
+    display: inline-block;
+
+    padding: 12px 30px;
+
+    border: 1px solid #000;
+    border-radius: 4px;
+
+    background: #fff;
+    color: #000;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.verify-email__resend-button {
+    border: none;
+    background: transparent;
+
+    color: #0073CC;
+    font-size: 14px;
+
+    cursor: pointer;
+}
