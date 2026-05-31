@@ -108,12 +108,13 @@
     margin-top: 40px;
 }
 
-.item-detail__description h3,
-.item-detail__info h3,
-.item-detail__comments h3,
+.item-detail__section-title,
+.item-detail__comments-title,
 .item-detail__form-title {
     margin-bottom: 20px;
+
     font-size: 24px;
+    font-weight: 700;
 }
 
 .item-detail__category,
@@ -181,4 +182,81 @@
 .item-detail__error {
     margin: 10px 0;
     color: #ff5555;
+}
+
+/* ====================
+   Section Title
+==================== */
+
+.item-detail__section-title,
+.item-detail__comments-title,
+.item-detail__form-title {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ====================
+   Description
+==================== */
+
+.item-detail__description-text {
+    margin: 0;
+
+    line-height: 1.7;
+}
+
+/* ====================
+   Label
+==================== */
+
+.item-detail__label {
+    min-width: 100px;
+
+    margin: 0;
+
+    font-weight: 700;
+}
+
+/* ====================
+   Category
+==================== */
+
+.item-detail__category-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.item-detail__category-tag {
+    padding: 4px 12px;
+
+    background: #f3f3f3;
+    border-radius: 20px;
+
+    font-size: 14px;
+}
+
+/* ====================
+   Condition
+==================== */
+
+.item-detail__condition-text {
+    font-size: 16px;
+}
+
+/* ====================
+   Comment
+==================== */
+
+.item-detail__user-name {
+    margin: 0;
+
+    font-weight: 700;
+}
+
+.item-detail__comment-form {
+    width: 100%;
 }

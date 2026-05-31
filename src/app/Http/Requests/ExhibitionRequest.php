@@ -59,7 +59,7 @@ class ExhibitionRequest extends FormRequest
         return [
 
             'image.required' => '商品画像を選択してください',
-            'image.image' => '画像ファイルを選択してください',
+            'image.image' => 'JPEGまたはPNG形式でアップロードしてください',
             'image.mimes' => 'JPEGまたはPNG形式でアップロードしてください',
 
             'categories.required' => 'カテゴリーを選択してください',

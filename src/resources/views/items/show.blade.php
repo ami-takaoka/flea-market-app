@@ -10,7 +10,7 @@
 
     {{-- 商品画像 --}}
     <div class="item-detail__image">
-        <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像">
+        <img src="{{ $item->image_url }}" alt="商品画像">
     </div>
 
     {{-- 商品情報 --}}
@@ -108,9 +108,11 @@
         {{-- 商品説明 --}}
         <div class="item-detail__description">
 
-            <h3>商品説明</h3>
+            <h3 class="item-detail__section-title">
+                商品説明
+            </h3>
 
-            <p>
+            <p class="item-detail__description-text">
                 {{ $item->description }}
             </p>
 
@@ -119,29 +121,39 @@
         {{-- 商品情報 --}}
         <div class="item-detail__info">
 
-            <h3>商品の情報</h3>
+            <h3 class="item-detail__section-title">
+                商品の情報
+            </h3>
 
             {{-- カテゴリー --}}
             <div class="item-detail__category">
 
-                <p>カテゴリー</p>
+                <p class="item-detail__label">
+                    カテゴリー
+                </p>
 
-                @foreach ($item->categories as $category)
+                <div class="item-detail__category-list">
 
-                    <span>
-                        {{ $category->name }}
-                    </span>
+                    @foreach ($item->categories as $category)
 
-                @endforeach
+                        <span class="item-detail__category-tag">
+                            {{ $category->name }}
+                        </span>
+
+                    @endforeach
+
+                </div>
 
             </div>
 
             {{-- 商品状態 --}}
             <div class="item-detail__condition">
 
-                <p>商品の状態</p>
+                <p class="item-detail__label">
+                    商品の状態
+                </p>
 
-                <span>
+                <span class="item-detail__condition-text">
                     {{ $item->condition_label }}
                 </span>
 
@@ -152,7 +164,7 @@
         {{-- コメント --}}
         <div class="item-detail__comments">
 
-            <h3>
+            <h3 class="item-detail__comments-title">
                 コメント({{ $item->comments->count() }})
             </h3>
 
@@ -177,7 +189,7 @@
 
                         @endif
 
-                        <p>
+                        <p class="item-detail__user-name">
                             {{ $comment->user->name }}
                         </p>
 
@@ -201,7 +213,11 @@
                 商品へのコメント
             </h3>
 
-            <form action="{{ route('comments.store', $item) }}" method="post">
+            <form
+                class="item-detail__comment-form"
+                action="{{ route('comments.store', $item) }}"
+                method="post"
+            >
 
                 @csrf
 

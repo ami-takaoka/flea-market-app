@@ -10,6 +10,6 @@ class VerifyEmailController
     {
         $request->fulfill();
 
-        return redirect()->route('items.index');
+        return redirect()->route('profile.edit');
     }
 }

@@ -23,7 +23,7 @@ class ProfileRequest extends FormRequest
 
             'name' => [
                 'required',
-                'max:255',
+                'max:20',
             ],
 
             'postal_code' => [
@@ -43,7 +43,6 @@ class ProfileRequest extends FormRequest
 
             'image' => [
                 'nullable',
-                'image',
                 'mimes:jpeg,png',
             ],
         ];
@@ -54,7 +53,7 @@ class ProfileRequest extends FormRequest
         return [
 
             'name.required' => 'ユーザー名を入力してください',
-            'name.max' => 'ユーザー名は255文字以内で入力してください',
+            'name.max' => 'ユーザー名は20文字以内で入力してください',
 
             'postal_code.required' => '郵便番号を入力してください',
             'postal_code.regex' => '郵便番号は123-4567形式で入力してください',
@@ -64,7 +63,7 @@ class ProfileRequest extends FormRequest
 
             'building.max' => '建物名は255文字以内で入力してください',
 
-            'image.image' => '画像ファイルを選択してください',
+            'image.image' => 'JPEGまたはPNG形式でアップロードしてください',
             'image.mimes' => 'JPEGまたはPNG形式でアップロードしてください',
         ];
     }

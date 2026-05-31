@@ -92,4 +92,13 @@ class Item extends Model
     {
         return self::STATUSES[$this->status] ?? '';
     }
+
+    public function getImageUrlAttribute()
+    {
+        if (str_starts_with($this->image, 'http')) {
+            return $this->image;
+        }
+
+        return asset('storage/' . $this->image);
+    }
 }

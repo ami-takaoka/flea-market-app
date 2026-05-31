@@ -53,11 +53,11 @@
                         選択してください
                     </option>
 
-                    <option value="konbini">
+                    <option value="1">
                         コンビニ払い
                     </option>
 
-                    <option value="card">
+                    <option value="2">
                         カード支払い
                     </option>
 
@@ -168,10 +168,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function updatePaymentMethod() {
     const value = select.value;
 
-    if (value == 'konbini') {
+    if (value == '1') {
         display.textContent = 'コンビニ払い';
 
-    } else if (value == 'card') {
+    } else if (value == '2') {
         display.textContent = 'カード支払い';
 
     } else {

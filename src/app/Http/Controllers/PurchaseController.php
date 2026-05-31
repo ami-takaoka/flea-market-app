@@ -17,7 +17,17 @@ class PurchaseController extends Controller
     {
         $user = Auth::user();
 
-        return view('purchase.create', compact('item', 'user'));
+        $address = session('purchase_address', [
+            'postal_code' => $user->postal_code,
+            'address' => $user->address,
+            'building' => $user->building,
+        ]);
+
+        return view('purchase.create', compact(
+            'item',
+            'user',
+            'address'
+        ));
     }
 
     // 住所変更画面
@@ -25,7 +35,13 @@ class PurchaseController extends Controller
     {
         $user = Auth::user();
 
-        return view('purchase.address', compact('item', 'user'));
+        $address = session('purchase_address', [
+            'postal_code' => $user->postal_code,
+            'address' => $user->address,
+            'building' => $user->building,
+        ]);
+
+        return view('purchase.address', compact('item', 'address'));
     }
 
     // 住所変更保存
@@ -59,6 +75,37 @@ class PurchaseController extends Controller
             'payment_method' => $request->payment_method,
         ]);
 
-        return redirect()->route('items.index');
+        // Stripe接続
+        Stripe::setApiKey(
+            config('services.stripe.secret')
+        );
+
+        $session = Session::create([
+            'payment_method_types' => ['card'],
+
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'jpy',
+
+                    'product_data' => [
+                        'name' => $item->name,
+                    ],
+
+                    'unit_amount' => $item->price,
+                ],
+
+                'quantity' => 1,
+            ]],
+
+            'mode' => 'payment',
+
+            'success_url' => route('items.index'),
+
+            'cancel_url' => route('purchase.create', $item),
+        ]);
+
+        session()->forget('purchase_address');
+
+        return redirect($session->url);
     }
 }

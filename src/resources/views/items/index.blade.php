@@ -8,12 +8,22 @@
 
     <div class="item-list__tab">
 
-        <a href="{{ route('items.index', ['keyword' => request('keyword')]) }}" class="{{ request('tab') !== 'mylist' ? 'active' : '' }}">
+        <a
+            href="{{ route('items.index', [
+                'keyword' => request('keyword')
+            ]) }}"
+            class="item-list__tab-link {{ request('tab') !== 'mylist' ? 'item-list__tab-link--active' : '' }}"
+        >
             おすすめ
         </a>
 
-        <a href="{{ route('items.index', ['tab' => 'mylist','keyword' => request('keyword')]) }}"
-        class="{{ request('tab') === 'mylist' ? 'active' : '' }}">
+        <a
+            href="{{ route('items.index', [
+                'tab' => 'mylist',
+                'keyword' => request('keyword')
+            ]) }}"
+            class="item-list__tab-link {{ request('tab') === 'mylist' ? 'item-list__tab-link--active' : '' }}"
+        >
             マイリスト
         </a>
 
@@ -22,7 +32,9 @@
     <div class="item-list">
 
         @foreach ($items as $item)
+
             <x-item-card :item="$item" />
+
         @endforeach
 
     </div>

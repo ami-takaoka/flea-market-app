@@ -12,7 +12,8 @@
             <h2>プロフィール設定</h2>
         </div>
 
-        <form class="form" action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data" novalidate>
+        <form class="form" action="{{ route('profile.update') }}" method="post" 
+        enctype="multipart/form-data" novalidate>
 
             @csrf
 
