@@ -89,7 +89,30 @@
 
                 </div>
 
+                <div class="form__error">
+                    @if($errors->has('postal_code') || $errors->has('address'))
+                        配送先を入力してください
+                    @endif
+                </div>
+
                 <div class="purchase-address">
+                    <input
+                        type="hidden"
+                        name="postal_code"
+                        value="{{ $address['postal_code'] ?? $user->postal_code ?? '' }}"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="address"
+                        value="{{ $address['address'] ?? $user->address ?? '' }}"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="building"
+                        value="{{ $address['building'] ?? $user->building ?? '' }}"
+                    >
 
                     <p>
                         〒{{ $address['postal_code'] ?? $user->postal_code ?? '' }}

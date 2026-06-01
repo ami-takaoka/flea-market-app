@@ -25,6 +25,14 @@ class PurchaseRequest extends FormRequest
             'required',
             'in:1,2',
             ],
+
+            'postal_code' => [
+                'required',
+            ],
+
+            'address' => [
+                'required',
+            ],
         ];
     }
 
@@ -34,6 +42,8 @@ class PurchaseRequest extends FormRequest
 
             'payment_method.required' => '支払い方法を選択してください',
             'payment_method.in' => '支払い方法を選択してください',
+            'postal_code.required' => '配送先を入力してください',
+            'address.required' => '配送先を入力してください',
         ];
     }
 }
