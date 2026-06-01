@@ -11,7 +11,9 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-        return view('mypage.profile', compact('user'));
+        $action = request('action', 'setup');
+
+        return view('mypage.profile', compact('user', 'action'));
     }
 
     public function update(ProfileRequest $request)
@@ -32,6 +34,10 @@ class ProfileController extends Controller
             'address' => $request->address,
             'building' => $request->building,
         ]);
+
+        if ($request->action === 'edit') {
+            return redirect()->route('mypage');
+        }
 
         return redirect()->route('items.index');
     }

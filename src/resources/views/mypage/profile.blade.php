@@ -17,6 +17,8 @@
 
             @csrf
 
+            <input type="hidden" name="action" value="{{ $action }}">
+
             {{-- プロフィール画像 --}}
             <div class="profile-form__image">
 

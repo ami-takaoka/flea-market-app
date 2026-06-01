@@ -26,7 +26,7 @@
             </div>
 
             <a
-                href="{{ route('profile.edit') }}"
+                href="{{ route('profile.edit', ['action' => 'edit']) }}"
                 class="mypage__profile-button"
             >
                 プロフィールを編集
