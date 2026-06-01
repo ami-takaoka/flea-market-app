@@ -70,7 +70,7 @@
     text-align: center;
 }
 
-.login-form__register a {
+.login-form__register-link {
     text-decoration: none;
     color: #0073CC;
     font-size: 16px;

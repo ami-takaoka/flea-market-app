@@ -37,7 +37,7 @@
     </div>
 
     {{-- タブ --}}
-    <div class="mypage-tab">
+    <div class="mypage__tab">
 
         <a
             href="{{ url('/mypage?page=sell') }}"

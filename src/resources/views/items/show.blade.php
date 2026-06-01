@@ -10,7 +10,7 @@
 
     {{-- 商品画像 --}}
     <div class="item-detail__image">
-        <img src="{{ $item->image_url }}" alt="商品画像">
+        <img class="item-detail__image-img" src="{{ $item->image_url }}" alt="商品画像">
     </div>
 
     {{-- 商品情報 --}}
@@ -28,7 +28,7 @@
         {{-- 価格 --}}
         <p class="item-detail__price">
             ¥{{ number_format($item->price) }}
-            <span>(税込)</span>
+            <span class="item-detail__price-tax">(税込)</span>
         </p>
 
         {{-- いいね・コメント数 --}}
@@ -46,7 +46,7 @@
 
                         <button type="submit" class="item-detail__like-button">
 
-                            <img src="{{ asset('images/ハートロゴ_ピンク.png') }}" alt="いいね済み">
+                            <img class="item-detail__like-icon" src="{{ asset('images/ハートロゴ_ピンク.png') }}" alt="いいね済み">
 
                         </button>
 
@@ -60,7 +60,7 @@
 
                         <button type="submit" class="item-detail__like-button">
 
-                            <img src="{{ asset('images/ハートロゴ_デフォルト.png') }}" alt="いいね">
+                            <img class="item-detail__like-icon" src="{{ asset('images/ハートロゴ_デフォルト.png') }}" alt="いいね">
 
                         </button>
 
@@ -68,16 +68,21 @@
 
                 @endif
 
-                <p>{{ $item->likes->count() }}</p>
+                <p class="item-detail__action-count">
+                    {{ $item->likes->count() }}
+                </p>
 
             </div>
 
             {{-- コメント数 --}}
             <div class="item-detail__action-icon">
 
-                <img src="{{ asset('images/ふきだしロゴ.png') }}" alt="コメント">
+                <img class="item-detail__comment-icon" src="{{ asset('images/ふきだしロゴ.png') }}"
+                alt="コメント">
 
-                <p>{{ $item->comments->count() }}</p>
+                <p class="item-detail__action-count">
+                    {{ $item->comments->count() }}
+                </p>
 
             </div>
 

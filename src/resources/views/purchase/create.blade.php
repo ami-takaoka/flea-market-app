@@ -95,7 +95,7 @@
                     @endif
                 </div>
 
-                <div class="purchase-address">
+                <div class="purchase-form__address">
                     <input
                         type="hidden"
                         name="postal_code"
@@ -114,15 +114,15 @@
                         value="{{ $address['building'] ?? $user->building ?? '' }}"
                     >
 
-                    <p>
+                    <p class="purchase-form__postal-code">
                         〒{{ $address['postal_code'] ?? $user->postal_code ?? '' }}
                     </p>
 
-                    <p>
+                    <p class="purchase-form__address-text">
                         {{ $address['address'] ?? $user->address ?? '' }}
                     </p>
 
-                    <p>
+                    <p class="purchase-form__building">
                         {{ $address['building'] ?? $user->building ?? '' }}
                     </p>
 
@@ -154,7 +154,7 @@
                         支払い方法
                     </span>
 
-                    <span id="payment_method_display">
+                    <span id="payment_method_display" class="purchase-summary__payment-method">
                         選択してください
                     </span>
 

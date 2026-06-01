@@ -33,6 +33,7 @@
 
                     <img
                         id="preview"
+                        class="form__image-preview-img"
                         src=""
                         alt=""
                         style="display: none;"
@@ -87,13 +88,14 @@
                         <label class="form__category-tag">
 
                             <input
+                                class="form__category-checkbox"
                                 type="checkbox"
                                 name="categories[]"
                                 value="{{ $category->id }}"
                                 {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}
                             >
 
-                            <span>
+                            <span class="form__category-name">
                                 {{ $category->name }}
                             </span>
 
@@ -304,7 +306,7 @@
 
 <script>
     const imageInput = document.getElementById('image');
-    const preview = document.getElementById('preview');
+    const preview = document.querySelector('.form__image-preview-img');
 
     imageInput.addEventListener('change', function () {
 

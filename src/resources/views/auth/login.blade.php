@@ -73,7 +73,7 @@
         </form>
 
         <div class="login-form__register">
-            <a href="{{ route('register') }}">
+            <a class="login-form__register-link" href="{{ route('register') }}">
                 会員登録はこちら
             </a>
         </div>

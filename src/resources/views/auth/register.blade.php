@@ -154,7 +154,7 @@
         </form>
 
         <div class="register-form__login">
-            <a href="{{ route('login') }}">
+            <a class="register-form__login-link" href="{{ route('login') }}">
                 ログインはこちら
             </a>
         </div>

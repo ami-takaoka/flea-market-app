@@ -47,6 +47,10 @@
     font-weight: 700;
 }
 
+.purchase-item__detail {
+    flex: 1;
+}
+
 .purchase-form__group {
     padding: 30px 0;
 
@@ -83,12 +87,14 @@
     border-radius: 4px;
 }
 
-.purchase-address {
+.purchase-form__address {
     margin-top: 20px;
     padding-left: 20px;
 }
 
-.purchase-address p {
+.purchase-form__postal-code,
+.purchase-form__address-text,
+.purchase-form__building {
     margin: 8px 0;
 }
 

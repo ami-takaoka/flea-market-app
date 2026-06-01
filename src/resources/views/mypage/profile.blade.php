@@ -41,7 +41,7 @@
                         hidden
                     >
 
-                    <div class="file-name"></div>
+                    <div class="profile-form__file-name"></div>
 
                 </div>
 
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const input = document.getElementById('image');
     const preview = document.querySelector('.profile-form__image-preview');
-    const fileName = document.querySelector('.file-name');
+    const fileName = document.querySelector('.profile-form__file-name');
 
     input.addEventListener('change', function (e) {
 
