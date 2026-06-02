@@ -52,7 +52,7 @@ main {
 
 .header {
     background: #000;
-    min-height: 80px;
+    height: 82px;
 }
 
 .header__inner {
@@ -61,13 +61,14 @@ main {
     justify-content: space-between;
 
     max-width: 1540px;
-    height: 100%;
 
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 25px;
 
     gap: 30px;
+    height: 100%;
 }
+
 
 /* ====================
    Header Logo
@@ -79,9 +80,10 @@ main {
 }
 
 .header__logo img {
-    width: 300px;
+    width: 370px;
     height: auto;
 }
+
 
 /* ====================
    Header Search
