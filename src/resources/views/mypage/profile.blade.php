@@ -22,11 +22,19 @@
             {{-- プロフィール画像 --}}
             <div class="profile-form__image">
 
-                <img
-                    class="profile-form__image-preview {{ !$user->image ? 'profile-form__image--empty' : '' }}"
-                    src="{{ $user->image ? asset('storage/' . $user->image) : '' }}"
-                    alt="プロフィール画像"
-                >
+                <div class="profile-form__image-preview-wrapper">
+
+                    @if($user->image)
+                        <img
+                            class="profile-form__image-preview"
+                            src="{{ asset('storage/' . $user->image) }}"
+                            alt="プロフィール画像"
+                        >
+                    @else
+                        <div class="profile-form__image-preview profile-form__image--empty"></div>
+                    @endif
+
+                </div>
 
                 <div class="profile-form__image-button">
 
@@ -192,7 +200,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const input = document.getElementById('image');
-    const preview = document.querySelector('.profile-form__image-preview');
     const fileName = document.querySelector('.profile-form__file-name');
 
     input.addEventListener('change', function (e) {
@@ -206,9 +213,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const reader = new FileReader();
 
         reader.onload = function (e) {
-            preview.src = e.target.result;
 
-            preview.classList.remove('profile-form__image--empty');
+            const wrapper = document.querySelector(
+                '.profile-form__image-preview-wrapper'
+            );
+
+            wrapper.innerHTML = `
+                <img
+                    class="profile-form__image-preview"
+                    src="${e.target.result}"
+                    alt="プロフィール画像"
+                >
+            `;
+
         };
 
         reader.readAsDataURL(file);
