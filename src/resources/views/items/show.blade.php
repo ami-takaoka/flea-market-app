@@ -10,7 +10,23 @@
 
     {{-- 商品画像 --}}
     <div class="item-detail__image">
-        <img class="item-detail__image-img" src="{{ $item->image_url }}" alt="商品画像">
+
+        @if ($item->image_url)
+
+            <img
+                class="item-detail__image-img"
+                src="{{ $item->image_url }}"
+                alt="商品画像"
+            >
+
+        @else
+
+            <div class="item-detail__image-placeholder">
+                商品画像
+            </div>
+
+        @endif
+
     </div>
 
     {{-- 商品情報 --}}
@@ -27,8 +43,13 @@
 
         {{-- 価格 --}}
         <p class="item-detail__price">
-            ¥{{ number_format($item->price) }}
-            <span class="item-detail__price-tax">(税込)</span>
+            ¥
+            <span class="item-detail__price-value">
+                {{ number_format($item->price) }}
+            </span>
+            <span class="item-detail__price-tax">
+                （税込）
+            </span>
         </p>
 
         {{-- いいね・コメント数 --}}
@@ -68,7 +89,7 @@
 
                 @endif
 
-                <p class="item-detail__action-count">
+                <p class="item-detail__action-count item-detail__action-count--like">
                     {{ $item->likes->count() }}
                 </p>
 
@@ -80,7 +101,7 @@
                 <img class="item-detail__comment-icon" src="{{ asset('images/ふきだしロゴ.png') }}"
                 alt="コメント">
 
-                <p class="item-detail__action-count">
+                <p class="item-detail__action-count item-detail__action-count--comment">
                     {{ $item->comments->count() }}
                 </p>
 
