@@ -4,30 +4,26 @@
 
 .item-list__tab {
     display: flex;
-    gap: 30px;
+    gap: 100px;
 
-    padding: 20px 40px;
+    margin-top: 47px;
+    padding: 0 0 15px 110px;
 
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 30px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 76px;
 }
 
 .item-list__tab-link {
-    color: #000;
+    color: #5F5F5F;
 
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: 700;
+
     text-decoration: none;
 
     padding-bottom: 10px;
 }
 
 .item-list__tab-link--active {
-    color: #82756A;
-
-    font-weight: 700;
-
-    border-bottom: 2px solid #82756A;
+    color: #FF0000;
 }
-
-
-
