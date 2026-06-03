@@ -60,9 +60,9 @@ img.mypage__profile-image {
 
 .mypage__tab {
     display: flex;
-    gap: 40px;
+    gap: 52px;
 
-    padding: 0 40px 15px;
+    padding: 0 0 15px 100px;
 
     border-bottom: 2px solid #5F5F5F;
     margin-bottom: 59px;
@@ -83,4 +83,3 @@ img.mypage__profile-image {
     color: #FF0000;
     font-weight: 700;
 }
-
