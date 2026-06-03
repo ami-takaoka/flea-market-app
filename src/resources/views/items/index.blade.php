@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/items/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/item-card.css') }}">
 @endsection
 
 @section('content')

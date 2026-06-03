@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/mypage/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/item-card.css') }}">
 @endsection
 
 @section('content')
@@ -12,12 +13,15 @@
         <div class="mypage__profile">
 
             <div class="mypage__profile-left">
-
-                <img
-                    class="mypage__profile-image"
-                    src="{{ $user->image ? asset('storage/' . $user->image) : '' }}"
-                    alt="プロフィール画像"
-                >
+                @if ($user->image)
+                    <img
+                        class="mypage__profile-image"
+                        src="{{ asset('storage/' . $user->image) }}"
+                        alt="プロフィール画像"
+                    >
+                @else
+                    <div class="mypage__profile-image"></div>
+                @endif
 
                 <h2 class="mypage__profile-name">
                     {{ $user->name }}
