@@ -1,31 +1,42 @@
+/* ====================
+   Purchase Layout
+==================== */
+
 .purchase-content {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 40px;
+    max-width: 1380px;
+    margin: 93px auto 0;
+    padding: 0 80px 174px;
+
+    box-sizing: border-box;
 }
 
 .purchase-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 60px;
 }
 
 .purchase-content__left {
-    width: 60%;
+    width: 680px;
+    flex-shrink: 0;
 }
 
 .purchase-content__right {
-    width: 35%;
+    width: 440px;
+    flex-shrink: 0;
 }
+
+/* ====================
+   Purchase Item
+==================== */
 
 .purchase-item {
     display: flex;
-    gap: 30px;
+    gap: 70px;
 
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     margin-bottom: 30px;
-
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000;
 }
 
 .purchase-item__image {
@@ -35,26 +46,51 @@
     object-fit: cover;
 }
 
+.purchase-item__detail {
+    padding-top: 10px;
+    flex: 1;
+    margin-top: -10px;
+}
+
 .purchase-item__name {
     margin: 0 0 20px;
 
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
+    line-height: 1;
 }
 
 .purchase-item__price {
-    font-size: 26px;
-    font-weight: 700;
+    margin: 0;
 }
 
-.purchase-item__detail {
-    flex: 1;
+.purchase-item__price-mark {
+    font-size: 27px;
+    font-weight: 400;
 }
+
+.purchase-item__price-value {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+/* ====================
+   Purchase Form
+==================== */
 
 .purchase-form__group {
     padding: 30px 0;
 
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000;
+}
+
+.purchase-form__group--payment {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.purchase-form__group--address {
+    padding-bottom: 50px;
 }
 
 .purchase-form__heading {
@@ -62,7 +98,7 @@
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .purchase-form__title {
@@ -74,71 +110,135 @@
 
 .purchase-form__link {
     color: #0073CC;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+
     text-decoration: none;
 }
 
+/* ====================
+   Payment Select
+==================== */
+
 .purchase-form__select {
-    width: 260px;
-    height: 40px;
+    width: 265px;
+    height: 31px;
 
-    padding: 0 10px;
+    margin-left: 61px;
 
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #5F5F5F;
+
+    color: #5F5F5F;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    padding-left: 6px;
+
+    background: #FFFFFF;
 }
 
+/* ====================
+   Shipping Address
+==================== */
+
 .purchase-form__address {
-    margin-top: 20px;
-    padding-left: 20px;
+    margin-top: 10px;
+    padding-left: 61px;
 }
 
 .purchase-form__postal-code,
 .purchase-form__address-text,
 .purchase-form__building {
-    margin: 8px 0;
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
+/* ====================
+   Purchase Summary
+==================== */
+
 .purchase-summary {
-    border: 1px solid #ccc;
+    width: 440px;
+
+    border: 1px solid #5F5F5F;
+
+    box-sizing: border-box;
 }
 
 .purchase-summary__row {
+    height: 115px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 30px;
-
-    border-bottom: 1px solid #ccc;
 }
 
-.purchase-summary__row:last-child {
-    border-bottom: none;
+.purchase-summary__row:first-child {
+    border-bottom: 1px solid #5F5F5F;
 }
+
+.purchase-summary__label,
+.purchase-summary__price,
+.purchase-summary__payment-method {
+    width: 220px;
+}
+
+.purchase-summary__label {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.purchase-summary__price,
+.purchase-summary__payment-method {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.purchase-summary__yen {
+    font-size: 20px;
+}
+
+/* ====================
+   Purchase Button
+==================== */
 
 .purchase-form__button {
-    margin-top: 40px;
+    margin-top: 66px;
 }
 
 .purchase-form__button-submit {
-    width: 100%;
-    height: 50px;
+    width: 440px;
+    height: 60px;
 
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
 
-    background: #82756A;
-    color: #fff;
+    background-color: #FF5555;
+    color: #FFFFFF;
 
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 700;
 
     cursor: pointer;
 }
 
+/* ====================
+   Validation Error
+==================== */
+
 .form__error {
-    margin-top: 10px;
+    margin: 12px 0 0;
 
     color: #FF5555;
-    font-size: 14px;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
 }

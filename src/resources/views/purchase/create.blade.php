@@ -34,7 +34,10 @@
                     </h2>
 
                     <p class="purchase-item__price">
-                        ¥{{ number_format($item->price) }}
+                        <span class="purchase-item__price-mark">¥</span>
+                        <span class="purchase-item__price-value">
+                            {{ number_format($item->price) }}
+                        </span>
                     </p>
 
                 </div>
@@ -42,13 +45,21 @@
             </div>
 
             {{-- 支払い方法 --}}
-            <div class="purchase-form__group">
+            <div class="purchase-form__group purchase-form__group--payment">
 
-                <h3 class="purchase-form__title">
-                    支払い方法
-                </h3>
+                <div class="purchase-form__heading">
 
-                <select class="purchase-form__select" name="payment_method" id="payment_method">
+                    <h3 class="purchase-form__title">
+                        支払い方法
+                    </h3>
+
+                </div>
+
+                <select
+                    name="payment_method"
+                    id="payment_method"
+                    class="purchase-form__select"
+                >
                     <option value="">
                         選択してください
                     </option>
@@ -72,7 +83,7 @@
             </div>
 
             {{-- 配送先 --}}
-            <div class="purchase-form__group">
+            <div class="purchase-form__group purchase-form__group--address">
 
                 <div class="purchase-form__heading">
 
@@ -138,19 +149,19 @@
 
                 <div class="purchase-summary__row">
 
-                    <span>
+                    <span class="purchase-summary__label">
                         商品代金
                     </span>
 
-                    <span>
-                        ¥{{ number_format($item->price) }}
+                    <span class="purchase-summary__price">
+                        <span class="purchase-summary__yen">¥</span>{{ number_format($item->price) }}
                     </span>
 
                 </div>
 
                 <div class="purchase-summary__row">
 
-                    <span>
+                    <span class="purchase-summary__label">
                         支払い方法
                     </span>
 
