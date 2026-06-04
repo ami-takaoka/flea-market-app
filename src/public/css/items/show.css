@@ -190,8 +190,8 @@
     margin-bottom: 48px;
 }
 
-.item-detail__error {
-    margin: 12px 0 24px;
+.form__error {
+    margin: 12px 0 0;
 
     color: #FF5555;
 

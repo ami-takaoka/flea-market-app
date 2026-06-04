@@ -255,11 +255,9 @@
 
                 {{-- バリデーションエラー --}}
                 @error('content')
-
-                    <p class="item-detail__error">
+                    <p class="form__error">
                         {{ $message }}
                     </p>
-
                 @enderror
 
                 {{-- 送信ボタン --}}

@@ -45,10 +45,13 @@
 }
 
 .form__error {
-    margin-top: 5px;
+    margin: 12px 0 0;
 
     color: #FF5555;
-    font-size: 14px;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 .form__button {
