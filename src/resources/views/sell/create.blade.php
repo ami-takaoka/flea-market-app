@@ -77,7 +77,7 @@
             {{-- カテゴリー --}}
             <div class="form__item">
 
-                <label class="form__label">
+                <label class="form__label form__label--category">
                     カテゴリー
                 </label>
 
@@ -118,10 +118,8 @@
             {{-- 商品の状態 --}}
             <div class="form__item">
 
-                <label
-                    class="form__label"
-                    for="condition"
-                >
+                <label class="form__label form__label--condition"
+                    for="condition">
                     商品の状態
                 </label>
 
