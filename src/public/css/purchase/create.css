@@ -140,6 +140,20 @@
     background: #FFFFFF;
 }
 
+.purchase-form__select {
+    width: 265px;
+    height: 31px;
+    padding: 4px 8px;
+
+    font-size: 16px;
+
+    border: 1px solid #5F5F5F;
+    background: #636769;
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
 /* ====================
    Shipping Address
 ==================== */

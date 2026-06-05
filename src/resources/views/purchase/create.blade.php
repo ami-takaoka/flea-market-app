@@ -202,10 +202,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function updatePaymentMethod() {
     const value = select.value;
 
-    if (value == '1') {
+    if (value === '1') {
         display.textContent = 'コンビニ払い';
 
-    } else if (value == '2') {
+    } else if (value === '2') {
         display.textContent = 'カード支払い';
 
     } else {

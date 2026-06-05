@@ -27,3 +27,17 @@
 .item-list__tab-link--active {
     color: #FF0000;
 }
+
+/* ====================
+   Responsive
+==================== */
+@media screen and (max-width: 850px) {
+
+    .item-list__tab {
+        justify-content: center;
+        gap: 40px;
+
+        padding-left: 0;
+    }
+
+}

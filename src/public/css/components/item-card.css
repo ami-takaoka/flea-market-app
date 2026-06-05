@@ -1,7 +1,6 @@
 /* ====================
    Item Card
 ==================== */
-
 .item-card__link {
     display: block;
 }
@@ -71,7 +70,6 @@
 /* ====================
    Item List
 ==================== */
-
 .item-list {
     display: grid;
     grid-template-columns: repeat(4, 290px);
@@ -79,4 +77,34 @@
     gap: 20px;
 
     padding-bottom: 60px;
+}
+
+/* ====================
+   Responsive
+==================== */
+@media screen and (max-width: 850px) {
+
+    .item-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px 60px;
+    }
+
+    .item-card__link {
+        width: 100%;
+    }
+
+    .item-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .item-card__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .item-card__body {
+        width: 100%;
+    }
 }
