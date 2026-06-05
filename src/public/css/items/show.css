@@ -1,6 +1,7 @@
 /* ====================
    Item Detail Layout
 ==================== */
+
 .item-detail {
     max-width: 1245px;
     margin: 131px auto 0;
@@ -49,6 +50,7 @@
 /* ====================
    Product Info
 ==================== */
+
 .item-detail__name {
     margin: 0;
 
@@ -87,6 +89,7 @@
 /* ====================
    Actions
 ==================== */
+
 .item-detail__actions {
     display: flex;
     gap: 55px;
@@ -101,6 +104,7 @@
 /* ====================
    Button
 ==================== */
+
 .item-detail__button {
     margin-top: 22px;
     margin-bottom: 22px;
@@ -150,6 +154,7 @@
 /* ====================
    Section
 ==================== */
+
 .item-detail__info,
 .item-detail__form {
     margin-top: 40px;
@@ -170,6 +175,7 @@
 /* ====================
    Comment Form
 ==================== */
+
 .item-detail__textarea {
     width: 100%;
     min-height: 246px;
@@ -413,4 +419,32 @@
     font-size: 30px;
     font-weight: 700;
     line-height: 1;
+}
+
+/* ====================
+   Responsive
+==================== */
+
+@media screen and (max-width: 850px) {
+
+    .item-detail {
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+
+    .item-detail__image,
+    .item-detail__image-img,
+    .item-detail__image-placeholder {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+
+    .item-detail__content {
+        width: 100%;
+        max-width: 600px;
+    }
 }

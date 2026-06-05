@@ -1,6 +1,7 @@
 /* ====================
    Item Card
 ==================== */
+
 .item-card__link {
     display: block;
 }
@@ -70,6 +71,7 @@
 /* ====================
    Item List
 ==================== */
+
 .item-list {
     display: grid;
     grid-template-columns: repeat(4, 290px);
@@ -82,6 +84,7 @@
 /* ====================
    Responsive
 ==================== */
+
 @media screen and (max-width: 850px) {
 
     .item-list {
