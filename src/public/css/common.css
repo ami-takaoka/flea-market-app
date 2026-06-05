@@ -1,7 +1,6 @@
 /* ====================
    共通設定
 ==================== */
-
 * {
     box-sizing: border-box;
 }
@@ -37,7 +36,6 @@ button {
 /* ====================
    レイアウト
 ==================== */
-
 main {
     width: 100%;
 }
@@ -45,10 +43,9 @@ main {
 /* ====================
    Header
 ==================== */
-
 .header {
     background: #000;
-    height: 82px;
+    height: 80px;
 }
 
 .header__inner {
@@ -56,27 +53,25 @@ main {
     align-items: center;
     justify-content: space-between;
 
-    max-width: 1540px;
+    max-width: 1360px;
 
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 5px;
 
-    gap: 30px;
+    gap: 60px;
     height: 100%;
 }
-
 
 /* ====================
    Header Logo
 ==================== */
-
 .header__logo {
     display: flex;
     align-items: center;
 }
 
 .header__logo img {
-    width: 370px;
+    width: 450px;
     height: auto;
 }
 
@@ -84,30 +79,30 @@ main {
 /* ====================
    Header Search
 ==================== */
-
 .header__search {
     display: flex;
     justify-content: center;
-    flex: 1;
+    flex: none;
+
+    margin-left: 0;
 }
 
 .header__search-input {
-    width: 100%;
-    max-width: 500px;
-    height: 40px;
+    width: 500px;
+    max-width: none;
+    height: 50px;
 
     padding: 0 15px;
 
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
 
-    font-size: 16px;
+    font-size: 24px;
 }
 
 /* ====================
    Header Navigation
 ==================== */
-
 .header__nav {
     display: flex;
     align-items: center;
@@ -116,7 +111,7 @@ main {
 .header__list {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 35px;
 }
 
 .header__item {
@@ -131,15 +126,18 @@ main {
 /* ====================
    Header Links
 ==================== */
-
 .header__link,
 .header__logout-button {
-    color: #fff;
-    font-size: 16px;
+    color: #FFFFFF;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+
+    white-space: nowrap;
 }
 
 /* ログアウトボタン */
-
 .header__logout-button {
     padding: 0;
 
@@ -150,13 +148,20 @@ main {
 }
 
 /* 出品ボタン */
-
 .header__link--button {
-    padding: 8px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background: #fff;
+    width: 100px;
+    height: 50px;
+
+    background: #FFFFFF;
     border-radius: 4px;
 
-    color: #000;
-    font-weight: 700;
+    color: #000000;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
 }
