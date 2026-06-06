@@ -256,3 +256,29 @@
     font-weight: 700;
     line-height: 1.4;
 }
+
+/* ====================
+   Responsive
+==================== */
+
+@media screen and (max-width: 850px) {
+
+    .purchase-content {
+        padding: 0 20px 80px;
+    }
+
+    .purchase-form {
+        flex-direction: column;
+    }
+
+    .purchase-content__left,
+    .purchase-content__right {
+        width: 100%;
+    }
+
+    .purchase-summary,
+    .purchase-form__button-submit {
+        width: 100%;
+    }
+
+}
