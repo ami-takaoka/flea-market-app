@@ -1,3 +1,7 @@
+/* ====================
+   Login Form Layout
+==================== */
+
 .login-form__content {
     width: 100%;
     max-width: 680px;
@@ -18,6 +22,10 @@
     font-weight: 700;
 }
 
+/* ====================
+   Form
+==================== */
+
 .form__group {
     margin-bottom: 37px;
 }
@@ -26,11 +34,19 @@
     margin-bottom: 0;
 }
 
+/* ====================
+   Label
+==================== */
+
 .form__label--item {
     color: #000;
     font-size: 24px;
     font-weight: 700;
 }
+
+/* ====================
+   Input
+==================== */
 
 .form__input--text input {
     width: 100%;
@@ -44,6 +60,10 @@
     font-size: 24px;
 }
 
+/* ====================
+   Error Message
+==================== */
+
 .form__error {
     margin: 12px 0 0;
 
@@ -54,23 +74,34 @@
     line-height: 1.4;
 }
 
+/* ====================
+   Submit Button
+==================== */
+
 .form__button {
     margin-top: 80px;
 }
 
-
 .form__button-submit {
     width: 100%;
     height: 65px;
+
     border: none;
     border-radius: 5px;
+
     background: #FF5555;
-    cursor: pointer;
+    color: #FFF;
+
     font-size: 26px;
     font-weight: 700;
-    color: #FFF;
     text-align: center;
+
+    cursor: pointer;
 }
+
+/* ====================
+   Register Link
+==================== */
 
 .login-form__register {
     margin-top: 24px;
@@ -79,6 +110,7 @@
 
 .login-form__register-link {
     color: #0073CC;
+
     font-size: 20px;
     font-weight: 400;
 }

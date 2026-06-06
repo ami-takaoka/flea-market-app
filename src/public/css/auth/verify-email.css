@@ -6,13 +6,14 @@
 }
 
 .verify-email__message {
+    max-width: 700px;
     margin-bottom: 62px;
 }
 
 .verify-email__message-text {
     font-size: 24px;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.5;
     text-align: center;
 }
 
@@ -51,3 +52,4 @@
     font-weight: 400;
     line-height: 1;
 }
+

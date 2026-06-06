@@ -8,12 +8,10 @@
 
     <div class="verify-email__content">
         <div class="verify-email__message">
-            <div class="verify-email__message">
-                <p class="verify-email__message-text">
-                    登録していただいたメールアドレスに認証メールを送付しました。<br>
-                    メール認証を完了してください。
-                </p>
-            </div>
+            <p class="verify-email__message-text">
+                登録していただいたメールアドレスに認証メールを送付しました。<br>
+                メール認証を完了してください。
+            </p>
         </div>
 
         <div class="verify-email__button">

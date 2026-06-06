@@ -116,7 +116,7 @@
     justify-content: center;
     align-items: center;
 
-    width: 570px;
+    width: 100%;
     height: 56px;
 
     border-radius: 4px;
@@ -135,7 +135,7 @@
     justify-content: center;
     align-items: center;
 
-    width: 570px;
+    width: 100%;
     height: 56px;
 
     border-radius: 4px;
@@ -207,7 +207,7 @@
 }
 
 .item-detail__comment-form {
-    width: 570px;
+    width: 100%;
 }
 
 /* ====================
@@ -327,7 +327,8 @@
 }
 
 .item-detail__comment-content {
-    width: 570px;
+    width: 100%;
+    box-sizing: border-box;
     min-height: 70px;
 
     padding: 15px;
@@ -447,4 +448,29 @@
         width: 100%;
         max-width: 600px;
     }
+}
+
+@media screen and (max-width: 390px) {
+
+    .item-detail {
+        padding: 0 16px;
+    }
+
+    .item-detail__name {
+        font-size: 32px;
+    }
+
+    .item-detail__price-value {
+        font-size: 32px;
+    }
+
+    .item-detail__section-title,
+    .item-detail__comments-title {
+        font-size: 28px;
+    }
+
+    .item-detail__user-name {
+        font-size: 24px;
+    }
+
 }

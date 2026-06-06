@@ -1,3 +1,7 @@
+/* ====================
+   Profile Form Layout
+==================== */
+
 .profile-form__content {
     max-width: 680px;
     margin: 60px auto 80px;
@@ -15,16 +19,22 @@
     line-height: 1;
 }
 
+/* ====================
+   Profile Image
+==================== */
+
 .profile-form__image {
     display: flex;
     align-items: center;
     gap: 30px;
+
     margin-bottom: 76px;
 }
 
 .profile-form__image-preview {
     width: 150px;
     height: 150px;
+
     border-radius: 50%;
     object-fit: cover;
 }
@@ -56,8 +66,13 @@
 
 .profile-form__file-name {
     margin-top: 10px;
+
     font-size: 14px;
 }
+
+/* ====================
+   Form
+==================== */
 
 .form__group {
     margin-bottom: 62px;
@@ -67,11 +82,19 @@
     margin-bottom: 8px;
 }
 
+/* ====================
+   Label
+==================== */
+
 .form__label--item {
     font-size: 24px;
     font-weight: 700;
     line-height: 1;
 }
+
+/* ====================
+   Input
+==================== */
 
 .form__input--text input {
     width: 100%;
@@ -85,6 +108,10 @@
     font-size: 24px;
 }
 
+/* ====================
+   Error Message
+==================== */
+
 .form__error {
     margin: 12px 0 0;
 
@@ -94,6 +121,10 @@
     font-weight: 700;
     line-height: 1.4;
 }
+
+/* ====================
+   Submit Button
+==================== */
 
 .form__button {
     margin-top: 68px;
