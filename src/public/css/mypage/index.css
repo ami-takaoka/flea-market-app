@@ -1,8 +1,16 @@
+/* ====================
+   My Page Layout
+==================== */
+
 .mypage {
     max-width: 1200px;
     margin: 50px auto 0;
     padding: 0 40px;
 }
+
+/* ====================
+   Profile
+==================== */
 
 .mypage__profile {
     display: flex;
@@ -58,6 +66,10 @@ img.mypage__profile-image {
     text-decoration: none;
 }
 
+/* ====================
+   Tab
+==================== */
+
 .mypage__tab {
     display: flex;
     gap: 52px;
@@ -82,4 +94,45 @@ img.mypage__profile-image {
 .mypage__tab a.active {
     color: #FF0000;
     font-weight: 700;
+}
+
+/* ====================
+   Responsive
+==================== */
+
+@media screen and (max-width: 850px) {
+
+    .mypage__profile {
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .mypage__profile-left {
+        gap: 20px;
+    }
+
+    .mypage__profile-button {
+        width: 200px;
+        height: 50px;
+
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .mypage__profile {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mypage__profile-left {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mypage__profile-name {
+        font-size: 28px;
+    }
+
 }
