@@ -118,7 +118,5 @@ class ItemSeeder extends Seeder
             Item::create($item); 
         }
         
-        // カテゴリ紐づけ
-        $item2->categories()->attach([2]);
     } 
 }
