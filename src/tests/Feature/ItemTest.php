@@ -14,6 +14,10 @@ class ItemTest extends TestCase
 
     use RefreshDatabase;
 
+    // ========================================
+    // 商品一覧
+    // ========================================
+
     public function test_all_items_are_displayed(): void
     {
         Item::factory()->create([
@@ -31,6 +35,31 @@ class ItemTest extends TestCase
         $response->assertSee('商品A');
         $response->assertSee('商品B');
     }
+
+    public function test_user_items_are_not_displayed(): void
+    {
+        $user = User::factory()->create();
+
+        Item::factory()->create([
+            'user_id' => $user->id,
+            'name' => '自分の商品',
+        ]);
+
+        Item::factory()->create([
+            'name' => '他人の商品',
+        ]);
+
+        $response = $this->actingAs($user)
+            ->get('/');
+
+        $response->assertSee('他人の商品');
+
+        $response->assertDontSee('自分の商品');
+    }
+
+    // ========================================
+    // マイリスト
+    // ========================================
 
     public function test_sold_label_is_displayed_for_purchased_items(): void
     {
@@ -53,27 +82,6 @@ class ItemTest extends TestCase
         $response->assertStatus(200);
 
         $response->assertSee('SOLD');
-    }
-
-    public function test_user_items_are_not_displayed(): void
-    {
-        $user = User::factory()->create();
-
-        Item::factory()->create([
-            'user_id' => $user->id,
-            'name' => '自分の商品',
-        ]);
-
-        Item::factory()->create([
-            'name' => '他人の商品',
-        ]);
-
-        $response = $this->actingAs($user)
-            ->get('/');
-
-        $response->assertSee('他人の商品');
-
-        $response->assertDontSee('自分の商品');
     }
 
     public function test_mylist_displays_only_liked_items()
@@ -173,5 +181,37 @@ class ItemTest extends TestCase
         $response->assertSee('Sold Item');
         $response->assertSee('SOLD');
     }
+
+    // ========================================
+    // 商品検索
+    // ========================================
+
+    public function test_items_can_be_searched_by_partial_match()
+    {
+        Item::factory()->create([
+            'name' => '腕時計',
+        ]);
+
+        Item::factory()->create([
+            'name' => 'バッグ',
+        ]);
+
+        $response = $this->get('/?keyword=腕');
+
+        $response->assertStatus(200);
+
+        $response->assertSee('腕時計');
+        $response->assertDontSee('バッグ');
+    }
+
+    public function test_search_keyword_is_preserved_when_switching_to_mylist()
+    {
+        $response = $this->get('/?keyword=腕');
+
+        $response->assertStatus(200);
+
+        $response->assertSee('?tab=mylist&amp;keyword=%E8%85%95', false);
+    }
+
 
 }
