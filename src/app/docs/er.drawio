@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="kKL-SX9JubZ9Bc4XEP5B" name="ページ1">
-        <mxGraphModel dx="698" dy="1668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="698" dy="1498" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="180" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="180" value="" style="whiteSpace=wrap;html=1;strokeColor=light-dark(#000000,#000000);" vertex="1" parent="1">
                     <mxGeometry x="20" y="-310" width="760" height="1220" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="users" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" vertex="1" parent="1">
