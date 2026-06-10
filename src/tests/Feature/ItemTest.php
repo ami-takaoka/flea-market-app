@@ -286,4 +286,42 @@ class ItemTest extends TestCase
         $response->assertSee('テストユーザー');
         $response->assertSee('テストコメント');
     }
+
+    public function test_like_count_is_displayed(): void
+    {
+        $user = User::factory()->create();
+
+        $item = Item::factory()->create();
+
+        Like::create([
+            'user_id' => $user->id,
+            'item_id' => $item->id,
+        ]);
+
+        $response = $this->get("/item/{$item->id}");
+
+        $response->assertStatus(200);
+
+        // いいね数が表示されることを確認
+        $response->assertSee('1');
+    }
+
+    public function test_liked_icon_is_displayed_for_liked_item(): void
+    {
+        $user = User::factory()->create();
+
+        $item = Item::factory()->create();
+
+        Like::create([
+            'user_id' => $user->id,
+            'item_id' => $item->id,
+        ]);
+
+        $response = $this->actingAs($user)
+            ->get("/item/{$item->id}");
+
+        $response->assertStatus(200);
+        
+        $response->assertSee('いいね済み');
+    }
 }
