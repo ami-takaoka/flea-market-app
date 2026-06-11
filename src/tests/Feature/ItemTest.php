@@ -13,7 +13,6 @@ use Tests\TestCase;
 
 class ItemTest extends TestCase
 {
-
     use RefreshDatabase;
 
     // ========================================
@@ -321,7 +320,7 @@ class ItemTest extends TestCase
             ->get("/item/{$item->id}");
 
         $response->assertStatus(200);
-        
+
         $response->assertSee('いいね済み');
     }
 }

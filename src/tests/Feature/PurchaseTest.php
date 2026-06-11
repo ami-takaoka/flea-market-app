@@ -9,7 +9,6 @@ use Tests\TestCase;
 
 class PurchaseTest extends TestCase
 {
-    
     use RefreshDatabase;
 
     // ========================================
@@ -32,12 +31,16 @@ class PurchaseTest extends TestCase
             ])
             ->get("/purchase/{$item->id}");
 
-            $response->assertStatus(200);
+        $response->assertStatus(200);
             
-            $response->assertSee('999-9999');
-            $response->assertSee('大阪府大阪市');
-            $response->assertSee('テストビル');
+        $response->assertSee('999-9999');
+        $response->assertSee('大阪府大阪市');
+        $response->assertSee('テストビル');
     }
+
+    // ========================================
+    // バリデーション
+    // ========================================
 
     public function test_payment_method_is_required(): void
     {
@@ -79,6 +82,4 @@ class PurchaseTest extends TestCase
             'address',
         ]);
     }
-
-    
 }

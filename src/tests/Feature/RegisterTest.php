@@ -187,5 +187,4 @@ class RegisterTest extends TestCase
 
         $response->assertSee('認証はこちらから');
     }
-
 }

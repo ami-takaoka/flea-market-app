@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginTest extends TestCase
 {
-    
     use RefreshDatabase;
+
+    // ========================================
+    // バリデーション
+    // ========================================
 
     public function test_email_is_required(): void
     {
@@ -32,6 +35,10 @@ class LoginTest extends TestCase
         $response->assertSessionHasErrors('password');
     }
 
+    // ========================================
+    // ログイン
+    // ========================================
+    
     public function test_user_can_login(): void
     {
         $user = User::factory()->create([

@@ -10,9 +10,12 @@ use Tests\TestCase;
 
 class LikeTest extends TestCase
 {
-
     use RefreshDatabase;
 
+    // ========================================
+    // いいね
+    // ========================================
+    
     public function test_user_can_like_item(): void
     {
         $user = User::factory()->create();

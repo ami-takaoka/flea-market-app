@@ -12,8 +12,11 @@ use Tests\TestCase;
 
 class SellItemTest extends TestCase
 {
-    
     use RefreshDatabase;
+
+    // ========================================
+    // 出品
+    // ========================================
 
     public function test_user_can_sell_item(): void
     {
@@ -48,6 +51,7 @@ class SellItemTest extends TestCase
             'price' => 1000,
         ]);
 
+        // 登録した商品とカテゴリの紐付けを確認
         $item = Item::where('name', 'テスト商品')->first();
 
         $this->assertDatabaseHas('category_item', [
@@ -55,6 +59,10 @@ class SellItemTest extends TestCase
             'category_id' => $category->id,
         ]);
     }
+
+    // ========================================
+    // バリデーション
+    // ========================================
 
     public function test_name_is_required_when_selling_item(): void
     {
@@ -216,6 +224,10 @@ class SellItemTest extends TestCase
 
         $response->assertSessionHasErrors('condition');
     }
+
+    // ========================================
+    // 入力値チェック
+    // ========================================
 
     public function test_price_must_be_zero_or_more(): void
     {

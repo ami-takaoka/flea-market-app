@@ -9,8 +9,11 @@ use Tests\TestCase;
 
 class CommentTest extends TestCase
 {
-    
     use RefreshDatabase;
+
+    // ========================================
+    // コメント投稿
+    // ========================================
 
     public function test_user_can_comment_on_item(): void
     {
@@ -30,6 +33,10 @@ class CommentTest extends TestCase
         ]);
     }
 
+    // ========================================
+    // 認証
+    // ========================================
+
     public function test_guest_cannot_comment_on_item(): void
     {
         $item = Item::factory()->create();
@@ -46,6 +53,10 @@ class CommentTest extends TestCase
         ]);
     }
 
+    // ========================================
+    // バリデーション
+    // ========================================
+    
     public function test_comment_content_is_required(): void
     {
         $user = User::factory()->create();

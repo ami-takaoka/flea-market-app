@@ -10,7 +10,6 @@ use Tests\TestCase;
 
 class ProfileTest extends TestCase
 {
-    
     use RefreshDatabase;
 
     // ========================================
@@ -41,6 +40,10 @@ class ProfileTest extends TestCase
         $response->assertSee('購入商品');
     }
 
+    // ========================================
+    // プロフィール表示
+    // ========================================
+
     public function test_user_information_is_displayed_on_profile_page(): void
     {
         $user = User::factory()->create([
@@ -58,6 +61,10 @@ class ProfileTest extends TestCase
         $response->assertSee('123-4567');
         $response->assertSee('東京都渋谷区');
     }
+
+    // ========================================
+    // プロフィール更新
+    // ========================================
 
     public function test_user_can_update_profile(): void
     {
@@ -79,6 +86,10 @@ class ProfileTest extends TestCase
             'building' => 'テストビル',
         ]);
     }
+
+    // ========================================
+    // バリデーション
+    // ========================================
 
     public function test_postal_code_must_be_valid_format(): void
     {
