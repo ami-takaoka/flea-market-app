@@ -132,7 +132,7 @@ http://localhost:8025
 
 ## ER図
 
-![alt](erd.png)
+![ER図](docs/er.png)
 
 ## URL
 
