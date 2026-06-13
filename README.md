@@ -5,26 +5,26 @@
 ### Dockerビルド
 
 1. GitHubからリポジトリをクローン
-```
+```bash
 git clone git@github.com:ami-takaoka/flea-market-app.git
 ```
 
 2. Docker Desktopを起動する
 
 3. プロジェクトディレクトリへ移動
-```
+```bash
 cd flea-market-app
 ```
 
 4. Dockerコンテナをビルド・起動
-```
+```bash
 docker-compose up -d --build
 ```
 
 ※ MacのM1・M2チップのPCの場合、`no matching manifest for linux/arm64/v8 in the manifest list entries`のメッセージが表示されビルドができないことがあります。
 エラーが発生する場合は、docker-compose.ymlファイルの「mysql」内に「platform」の項目を追加で記載してください
 
-``` bash
+```bash
 mysql:
     platform: linux/x86_64
     image: mysql:8.0.26
@@ -34,21 +34,21 @@ mysql:
 ### Laravel環境構築
 
 1. PHPコンテナに入る
-```
+```bash
 docker-compose exec php bash
 ```
 
-2.　依存関係をインストール
-```
+2. 依存関係をインストール
+```bash
 composer install
 ```
 ※ Laravelの権限エラーが出た場合
-```
+```bash
 sudo chmod -R 777 src/*
 ```
 
-3.　.envファイル作成
-```
+3. .envファイル作成
+```bash
 cp .env.example .env
 ```
 .envを以下のように変更してください
@@ -77,44 +77,47 @@ STRIPE_SECRET=
 取得したAPIキーを `.env` に設定してください。
 
 ※ 権限エラーが出た場合
-```
+```bash
 sudo chown -R $USER:$USER .
 ```
 
-4.　アプリケーションキー生成
-```
+4. アプリケーションキー生成
+```bash
 php artisan key:generate
 ```
 
-5.　設定キャッシュ削除
-```
+5. 設定キャッシュ削除
+```bash
 php artisan config:clear
 ```
 
-6.　マイグレーション実行
-```
-php artisan migrate
-```
-
-7. シーディングの実行
-``` bash
-php artisan db:seed
+6. マイグレーション実行
+```bash
+php artisan migrate --seed
 ```
 
-8. ストレージリンク作成
-``` bash
+7. ストレージリンク作成
+```bash
 php artisan storage:link
 ```
 
-9. アプリ確認
+8. アプリ確認
 ```
 http://localhost
 ```
 
-10. Mailhog確認 
+9. Mailhog確認 
 ```
 http://localhost:8025
 ```
+
+## ダミーデータ
+
+Seeder実行により以下のデータが登録されます。
+
+- ユーザー情報
+- 商品情報
+- カテゴリ情報
 
 ## 使用技術(実行環境)
 
@@ -129,6 +132,28 @@ http://localhost:8025
 - HTML
 - CSS
 - JavaScript
+
+## テスト
+
+PHPUnitを使用しています。
+
+### テスト実行
+```bash
+php artisan test
+```
+
+### テスト内容
+
+- 会員登録機能
+- ログイン機能
+- ログアウト機能
+- 商品一覧表示機能
+- いいね機能
+- コメント機能
+- 購入機能
+- プロフィール編集機能
+- 出品機能
+- メール認証機能
 
 ## ER図
 
