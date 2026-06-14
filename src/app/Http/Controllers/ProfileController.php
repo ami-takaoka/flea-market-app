@@ -25,15 +25,23 @@ class ProfileController extends Controller
             $path = $request->file('image')
                 ->store('profile_images', 'public');
 
-            $user->image = $path;
-        }
+            $user->update([
+                'image' => $path,
+                'name' => $request->name,
+                'postal_code' => $request->postal_code,
+                'address' => $request->address,
+                'building' => $request->building,
+            ]);
 
-        $user->update([
-            'name' => $request->name,
-            'postal_code' => $request->postal_code,
-            'address' => $request->address,
-            'building' => $request->building,
-        ]);
+        } else {
+
+            $user->update([
+                'name' => $request->name,
+                'postal_code' => $request->postal_code,
+                'address' => $request->address,
+                'building' => $request->building,
+            ]);
+        }
 
         if ($request->action === 'edit') {
             return redirect()->route('mypage');

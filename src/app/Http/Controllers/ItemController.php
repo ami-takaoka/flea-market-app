@@ -16,14 +16,11 @@ class ItemController extends Controller
         if ($request->tab === 'mylist') {
             // 未ログイン時は空
             if (!Auth::check()) {
-
                 $items = collect();
-
             } else {
-
                 $items = Item::whereHas('likes', function ($query) {
-                        $query->where('user_id', Auth::id());
-                    })
+                    $query->where('user_id', Auth::id());
+                })
                     ->when($keyword, function ($query, $keyword) {
                         $query->where('name', 'like', "%{$keyword}%");
                     })
@@ -35,10 +32,8 @@ class ItemController extends Controller
                     ->latest()
                     ->get();
             }
-
-        // おすすめ
         } else {
-
+            // おすすめ
             $query = Item::query();
 
             $query->when($keyword, function ($query, $keyword) {
