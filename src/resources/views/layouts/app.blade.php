@@ -21,7 +21,7 @@
 
     <header class="header">
         <div class="header__inner">
-            <a href="/" class="header__logo">
+            <a href="{{ route('items.index') }}" class="header__logo">
                 <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="COACHTECH">
             </a>
 
@@ -29,10 +29,9 @@
                 <input class="header__search-input" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="なにをお探しですか？">
             </form>
 
-           <nav class="header__nav">
+            <nav class="header__nav">
                 <ul class="header__list">
-                     <li class="header__item">
-
+                    <li class="header__item">
                         @guest
                             <a class="header__link" href="{{ route('login') }}">
                                 ログイン
@@ -41,9 +40,9 @@
 
                         @auth
                             <form class="header__form" action="{{ route('logout') }}" method="POST">
-                                
                                 @csrf
-                                <button class="header__logout-button" type="submit"> 
+
+                                <button class="header__logout-button" type="submit">
                                     ログアウト
                                 </button>
                             </form>

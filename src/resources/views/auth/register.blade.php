@@ -12,17 +12,11 @@
             <h2>会員登録</h2>
         </div>
 
-        <form
-            class="form"
-            action="{{ route('register') }}"
-            method="post"
-            novalidate
-        >
+        {{-- 会員登録フォーム --}}
+        <form class="form" action="{{ route('register') }}" method="post" novalidate>
             @csrf
 
-            {{-- ユーザー名 --}}
             <div class="form__group">
-
                 <div class="form__group-title">
                     <label for="name" class="form__label--item">
                         ユーザー名
@@ -30,14 +24,8 @@
                 </div>
 
                 <div class="form__group-content">
-
                     <div class="form__input--text">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            value="{{ old('name') }}"
-                        >
+                        <input type="text" name="name" id="name" value="{{ old('name') }}">
                     </div>
 
                     <div class="form__error">
@@ -45,14 +33,10 @@
                             {{ $message }}
                         @enderror
                     </div>
-
                 </div>
-
             </div>
 
-            {{-- メールアドレス --}}
             <div class="form__group">
-
                 <div class="form__group-title">
                     <label for="email" class="form__label--item">
                         メールアドレス
@@ -60,14 +44,8 @@
                 </div>
 
                 <div class="form__group-content">
-
                     <div class="form__input--text">
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            value="{{ old('email') }}"
-                        >
+                        <input type="email" name="email" id="email" value="{{ old('email') }}">
                     </div>
 
                     <div class="form__error">
@@ -75,14 +53,10 @@
                             {{ $message }}
                         @enderror
                     </div>
-
                 </div>
-
             </div>
 
-            {{-- パスワード --}}
             <div class="form__group">
-
                 <div class="form__group-title">
                     <label for="password" class="form__label--item">
                         パスワード
@@ -90,13 +64,8 @@
                 </div>
 
                 <div class="form__group-content">
-
                     <div class="form__input--text">
-                        <input
-                            type="password"
-                            name="password"
-                            id="password"
-                        >
+                        <input type="password" name="password" id="password">
                     </div>
 
                     <div class="form__error">
@@ -104,31 +73,19 @@
                             {{ $message }}
                         @enderror
                     </div>
-
                 </div>
-
             </div>
 
-            {{-- 確認用パスワード --}}
             <div class="form__group">
-
                 <div class="form__group-title">
-                    <label
-                        for="password_confirmation"
-                        class="form__label--item"
-                    >
+                    <label for="password_confirmation" class="form__label--item">
                         確認用パスワード
                     </label>
                 </div>
 
                 <div class="form__group-content">
-
                     <div class="form__input--text">
-                        <input
-                            type="password"
-                            name="password_confirmation"
-                            id="password_confirmation"
-                        >
+                        <input type="password" name="password_confirmation" id="password_confirmation">
                     </div>
 
                     <div class="form__error">
@@ -136,29 +93,22 @@
                             {{ $message }}
                         @enderror
                     </div>
-
                 </div>
-
             </div>
 
-            {{-- ボタン --}}
             <div class="form__button">
-                <button
-                    class="form__button-submit"
-                    type="submit"
-                >
+                <button class="form__button-submit" type="submit">
                     登録する
                 </button>
             </div>
-
         </form>
 
+        {{-- ログイン画面リンク --}}
         <div class="register-form__login">
             <a class="register-form__login-link" href="{{ route('login') }}">
                 ログインはこちら
             </a>
         </div>
-
     </div>
 
 @endsection

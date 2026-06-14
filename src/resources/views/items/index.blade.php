@@ -8,36 +8,26 @@
 @section('content')
 
     <div class="item-list__tab">
-
-        <a
-            href="{{ route('items.index', [
+        <a href="{{ route('items.index', [
                 'keyword' => request('keyword')
-            ]) }}"
-            class="item-list__tab-link {{ request('tab') !== 'mylist' ? 'item-list__tab-link--active' : '' }}"
-        >
+            ]) }}" 
+            class="item-list__tab-link {{ request('tab') !== 'mylist' ? 'item-list__tab-link--active' : '' }}">
             おすすめ
         </a>
 
-        <a
-            href="{{ route('items.index', [
+        <a href="{{ route('items.index', [
                 'tab' => 'mylist',
                 'keyword' => request('keyword')
             ]) }}"
-            class="item-list__tab-link {{ request('tab') === 'mylist' ? 'item-list__tab-link--active' : '' }}"
-        >
+            class="item-list__tab-link {{ request('tab') === 'mylist' ? 'item-list__tab-link--active' : '' }}">
             マイリスト
         </a>
-
     </div>
 
     <div class="item-list">
-
         @foreach ($items as $item)
-
             <x-item-card :item="$item" />
-
         @endforeach
-
     </div>
 
 @endsection
