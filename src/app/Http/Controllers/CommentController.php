@@ -14,7 +14,7 @@ class CommentController extends Controller
         Comment::create([
             'user_id' => Auth::id(),
             'item_id' => $item->id,
-            'content' => $data['content'],
+            'content' => $request->content,
         ]);
 
         return redirect()->back();

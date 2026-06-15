@@ -43,6 +43,7 @@ class ProfileRequest extends FormRequest
 
             'image' => [
                 'nullable',
+                'image',
                 'mimes:jpeg,png',
             ],
         ];

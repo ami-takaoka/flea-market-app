@@ -31,4 +31,21 @@ class Purchase extends Model
     {
         return $this->belongsTo(Item::class);
     }
+
+    //======================
+    // Payment Method
+    //======================
+
+    public const PAYMENT_CONVENIENCE = 1;
+    public const PAYMENT_CARD = 2;
+
+    public const PAYMENT_METHODS = [
+        self::PAYMENT_CONVENIENCE => 'コンビニ払い',
+        self::PAYMENT_CARD => 'カード払い',
+    ];
+
+    public function getPaymentMethodLabelAttribute()
+    {
+        return self::PAYMENT_METHODS[$this->payment_method] ?? '';
+    }
 }

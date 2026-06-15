@@ -76,7 +76,7 @@ class ItemTest extends TestCase
             'item_id' => $item->id,
             'postal_code' => '123-4567',
             'address' => '東京都渋谷区1-1-1',
-            'payment_method' => 1,
+            'payment_method' => Purchase::PAYMENT_CONVENIENCE,
         ]);
 
         $response = $this->actingAs($user)
@@ -105,7 +105,7 @@ class ItemTest extends TestCase
             'item_id' => $item->id,
             'postal_code' => '123-4567',
             'address' => '東京都渋谷区',
-            'payment_method' => 1,
+            'payment_method' => Purchase::PAYMENT_CONVENIENCE,
         ]);
 
         $response = $this->get('/');

@@ -22,8 +22,8 @@ class PurchaseRequest extends FormRequest
         return [
 
             'payment_method' => [
-            'required',
-            'in:1,2',
+                'required',
+                'in:1,2',
             ],
 
             'postal_code' => [

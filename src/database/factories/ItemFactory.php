@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
+use App\Models\Item;
 
 class ItemFactory extends Factory
 {
@@ -22,9 +23,12 @@ class ItemFactory extends Factory
 
             'description' => $this->faker->sentence(),
 
-            'condition' => $this->faker->numberBetween(1, 4),
+            'condition' => $this->faker->numberBetween(
+                Item::CONDITION_GOOD,
+                Item::CONDITION_BAD
+            ),
 
-            'status' => 1,
+            'status' => Item::STATUS_ON_SALE,
         ];
     }
 }

@@ -43,11 +43,13 @@
                             選択してください
                         </option>
 
-                        <option value="1" {{ old('payment_method') == '1' ? 'selected' : '' }}>
+                        <option value="{{ \App\Models\Purchase::PAYMENT_CONVENIENCE }}"
+                            {{ old('payment_method') == \App\Models\Purchase::PAYMENT_CONVENIENCE ? 'selected' : '' }}>
                             コンビニ払い
                         </option>
 
-                        <option value="2" {{ old('payment_method') == '2' ? 'selected' : '' }}>
+                        <option value="{{ \App\Models\Purchase::PAYMENT_CARD }}"
+                            {{ old('payment_method') == \App\Models\Purchase::PAYMENT_CARD ? 'selected' : '' }}>
                             カード支払い
                         </option>
                     </select>
@@ -135,6 +137,9 @@
 
 @push('scripts')
 <script>
+    const PAYMENT_CONVENIENCE = '{{ \App\Models\Purchase::PAYMENT_CONVENIENCE }}';
+    const PAYMENT_CARD = '{{ \App\Models\Purchase::PAYMENT_CARD }}';
+
     document.addEventListener('DOMContentLoaded', function () {
 
         const select = document.getElementById('payment_method');
@@ -143,10 +148,10 @@
         function updatePaymentMethod() {
             const value = select.value;
 
-            if (value === '1') {
+            if (value === PAYMENT_CONVENIENCE) {
                 display.textContent = 'コンビニ払い';
 
-            } else if (value === '2') {
+            } else if (value === PAYMENT_CARD) {
                 display.textContent = 'カード支払い';
 
             } else {

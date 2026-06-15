@@ -28,7 +28,7 @@ class SellController extends Controller
             'user_id' => Auth::id(),
             'image' => $path,
             'condition' => $request->condition,
-            'status' => 1,
+            'status' => Item::STATUS_ON_SALE,
             'name' => $request->name,
             'brand' => $request->brand_name,
             'description' => $request->description,
