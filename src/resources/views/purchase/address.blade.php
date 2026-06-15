@@ -8,7 +8,9 @@
 
     <div class="address-form__content">
         <div class="address-form__heading">
-            <h2>住所の変更</h2>
+            <h1 class="form__title">
+                住所の変更
+            </h1>
         </div>
 
         <form class="form" action="{{ route('purchase.address.update', $item->id) }}" method="post" novalidate>

@@ -8,7 +8,9 @@
 
     <div class="login-form__content">
         <div class="login-form__heading">
-            <h2>ログイン</h2>
+            <h1 class="form__title">
+                ログイン
+            </h1>
         </div>
 
         {{-- ログインフォーム --}}

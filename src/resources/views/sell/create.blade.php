@@ -8,7 +8,9 @@
 
     <div class="sell-form__content">
         <div class="sell-form__heading">
-            <h2>商品の出品</h2>
+            <h1 class="form__title">
+                商品の出品
+            </h1>
         </div>
 
         <form class="form" action="{{ route('sell.store') }}" method="post" enctype="multipart/form-data">
@@ -16,9 +18,9 @@
 
             {{-- 商品画像 --}}
             <div class="form__group">
-                <h3 class="form__section-title">
+                <h2 class="form__section-title">
                     商品画像
-                </h3>
+                </h2>
 
                 <div class="form__image">
                     <div class="form__image-preview">
@@ -41,9 +43,9 @@
 
             {{-- 商品の詳細 --}}
             <div class="form__group">
-                <h3 class="form__section-title">
+                <h2 class="form__section-title">
                     商品の詳細
-                </h3>
+                </h2>
 
                 {{-- カテゴリー --}}
                 <div class="form__item">
@@ -105,9 +107,9 @@
 
             {{-- 商品名と説明 --}}
             <div class="form__group">
-                <h3 class="form__section-title">
+                <h2 class="form__section-title">
                     商品名と説明
-                </h3>
+                </h2>
 
                 {{-- 商品名 --}}
                 <div class="form__item">

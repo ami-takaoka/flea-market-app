@@ -7,9 +7,10 @@
 @section('content')
 
     <div class="register-form__content">
-
         <div class="register-form__heading">
-            <h2>会員登録</h2>
+            <h1 class="form__title">
+                会員登録
+            </h1>
         </div>
 
         {{-- 会員登録フォーム --}}
