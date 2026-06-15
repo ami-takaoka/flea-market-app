@@ -24,18 +24,17 @@ Route::get('/item/{item}', [ItemController::class, 'show'])
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    // コメント
+    // コメント・いいね
     Route::post('/comment/{item}', [CommentController::class, 'store'])
         ->name('comments.store');
 
-    // いいね
     Route::post('/like/{item}', [LikeController::class, 'store'])
         ->name('likes.store');
 
     Route::delete('/like/{item}', [LikeController::class, 'destroy'])
         ->name('likes.destroy');
 
-    // プロフィール編集
+    // プロフィール
     Route::get('/mypage/profile', [ProfileController::class, 'edit'])
         ->name('profile.edit');
 
@@ -53,19 +52,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/sell', [SellController::class, 'store'])
         ->name('sell.store');
 
-    // 購入画面
+    // 購入
     Route::get('/purchase/{item}', [PurchaseController::class, 'create'])
         ->name('purchase.create');
 
-    // 住所変更画面
     Route::get('/purchase/address/{item}', [PurchaseController::class, 'editAddress'])
         ->name('purchase.address.edit');
 
-    // 住所変更保存
     Route::post('/purchase/address/{item}', [PurchaseController::class, 'updateAddress'])
         ->name('purchase.address.update');
 
-    // 購入処理
     Route::post('/purchase/{item}', [PurchaseController::class, 'purchase'])
         ->name('purchase.store');
 });
