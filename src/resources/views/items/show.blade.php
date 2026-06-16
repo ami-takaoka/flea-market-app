@@ -164,11 +164,11 @@
 
                     <textarea name="content" class="item-detail__textarea">{{ old('content') }}</textarea>
 
-                    @error('content')
-                        <p class="form__error">
+                    <div class="form__error">
+                        @error('content')
                             {{ $message }}
-                        </p>
-                    @enderror
+                        @enderror
+                    </div>
 
                     <button type="submit" class="item-detail__comment-button">
                         コメントを送信する
