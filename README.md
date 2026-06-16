@@ -93,7 +93,7 @@ php artisan config:clear
 
 6. マイグレーション実行
 ```bash
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
 7. ストレージリンク作成
@@ -118,6 +118,17 @@ Seeder実行により以下のデータが登録されます。
 - ユーザー情報
 - 商品情報
 - カテゴリ情報
+
+## テスト用アカウント
+
+Seeder実行後、以下のアカウントでログインできます。
+
+|メールアドレス       | パスワード |
+|--------------------|-----------|
+| test@example.com   | password123 |
+| sample@example.com | password123 |
+
+※ Seederにより作成されるユーザーはメール認証済みです。
 
 ## 使用技術(実行環境)
 

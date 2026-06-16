@@ -25,6 +25,7 @@ class ExhibitionRequest extends FormRequest
                 'required',
                 'image',
                 'mimes:jpeg,png',
+                'max:2048',
             ],
 
             'categories' => [
@@ -61,6 +62,7 @@ class ExhibitionRequest extends FormRequest
             'image.required' => '商品画像を選択してください',
             'image.image' => 'JPEGまたはPNG形式でアップロードしてください',
             'image.mimes' => 'JPEGまたはPNG形式でアップロードしてください',
+            'image.max' => '画像サイズは2MB以下にしてください',
 
             'categories.required' => 'カテゴリーを選択してください',
 

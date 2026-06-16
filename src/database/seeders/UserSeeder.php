@@ -13,12 +13,14 @@ class UserSeeder extends Seeder
             'name' => 'テストユーザー1',
             'email' => 'test@example.com',
             'password' => bcrypt('password123'),
+            'email_verified_at' => now(),
         ]);
 
         User::create([
             'name' => 'サンプルユーザー',
             'email' => 'sample@example.com',
             'password' => bcrypt('password123'),
+            'email_verified_at' => now(),
         ]);
     }
 }
