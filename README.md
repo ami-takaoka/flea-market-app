@@ -101,6 +101,13 @@ php artisan migrate:fresh --seed
 php artisan storage:link
 ```
 
+※ アプリ表示時に Permission denied エラーが発生する場合は、以下のコマンドを実行してください。
+```bash
+chmod -R 777 storage
+chmod -R 777 bootstrap/cache
+php artisan optimize:clear
+```
+
 8. アプリ確認
 ```
 http://localhost
@@ -129,6 +136,10 @@ Seeder実行後、以下のアカウントでログインできます。
 | sample@example.com | password123 |
 
 ※ Seederにより作成されるユーザーはメール認証済みです。
+
+※ Seederの商品は test@example.com が出品者として登録されています。
+そのため test@example.com でログインした場合、おすすめ一覧には商品が表示されません（自身の出品商品を除外する仕様のため）。
+商品一覧の表示確認は sample@example.com でログインしてご確認ください。
 
 ## 使用技術(実行環境)
 
